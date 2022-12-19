@@ -1,4 +1,4 @@
-export const questionsArray = [
+const questionsArray = [
     question1 = [
         question = "What does JS stand for?",
         choices = [
