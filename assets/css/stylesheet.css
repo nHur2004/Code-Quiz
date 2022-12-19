@@ -1,0 +1,42 @@
+:root {
+    --primary-color: #dcbb89;
+    --secondary-color: #594225;
+    --font1-color: #401902;
+    --font2-color: #260801;
+    --bg-color: rgb(237, 224, 219);
+}
+* {
+    border: 1px black solid;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: var(--font2-color);
+    font: "Open Sans";
+}
+/* body styling */
+body {
+    overflow: hidden;
+}
+/* header styling */
+header {
+    background-color: var(--bg-color);
+}
+.jumbotron h1 {
+    font-weight: bolder;
+}
+.jumbotron span {
+    font-size: 2rem;
+}
+/* main styling */
+main {
+    height: auto;
+}
+.startButton {
+    font-size: 1.5rem;
+    padding: 1rem;
+    background-color: var(--bg-color);
+}
+.startButton:hover {
+    opacity: 100%;
+    background-color: var(--bg-color);
+}
