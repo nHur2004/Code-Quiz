@@ -59,20 +59,20 @@ const questionsArray = [
             option4 = "1000000ms"
         ]
     ]
-]
+];
 
 var quizStart = function () {
-    buttonRow.textContent = questionsArray.map;
-}
+    console.log("ping");
+    buttonRow.textContent = "";
+};
 
 var quizButtonMaker = function (questionNumber) {
-    for ( i = 0; i < questionNumber; i++ ) {
         var hello = createElement("button");
         hello.textContent = `hello from ${i}`;
         hello.setAttribute("class", "btn quizButton");
         quizButtonRow.appendChild(hello);
-    }
-}
+    
+};
 
 var startQuiz = function () {
     
@@ -81,40 +81,41 @@ var startQuiz = function () {
     buttonWorks.setAttribute("thisWorks", "as intended");
     mainContainer.appendChild(buttonWorks);
 
-    quizStart;
-    quizTimerStart;
+    quizStart();
+    quizTimerStart();
 
-}
+};
 
 var quizTimerStart = function () {
-    var currentCount = quizTimer;
+    console.log("Clock")
+    var currentCount = quizTimer.textContent;
     for ( i = 1000; i <= currentCount; i ) {
-        if ( i <= currentCount ) {
-            currentCount - i;
-        } else {
-            gameEnd(highscore);
+            console.log(currentCount);
+            currentCount = currentCount - i;
+            setTimeout(console.log('tick'), 10000);
         }
-    }
-}
+    console.log("Clock ended")
+};
 
 var gameEnd = function (highscore) {
     getHighScores;
     highScores.unshift(highscore);
 
     saveHighScore(highscore);
-}
+};
 
 var getHighScores = function () {
+    console.log("this function is loaded")
     JSON.parse(localStorage.getItem("prevHighscores"));
-}
+};
 
 var saveHighScore = function (highscore) {
     gameEnd(highscore);
     highScores.push(highscore);
 
     localStorage.setItem("prevHighscores", JSON.stringify(highScores));
-}
+};
 
-startButton.addEventListener("click", startQuiz())
+startButton.addEventListener("click", startQuiz);
 
 getHighScores();
