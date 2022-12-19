@@ -6,7 +6,6 @@
     --bg-color: rgb(237, 224, 219);
 }
 * {
-    border: 1px black solid;
     margin: 0;
     padding: 0;
     box-sizing: border-box;

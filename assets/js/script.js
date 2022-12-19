@@ -3,6 +3,9 @@ var highScores = [];
 // create variables from IDs
 var startButton = document.getElementById("startButton");
 var mainContainer = document.getElementById("mainContainer");
+var quizTimer = document.getElementById("timerSpan");
+var buttonRow = document.getElementById("buttonRow");
+
 
 // questions array
 const questionsArray = [
@@ -58,9 +61,53 @@ const questionsArray = [
     ]
 ]
 
+var quizStart = function () {
+    buttonRow.textContent = "";
+console.log('Quiz started')
+}
+
+var quizButtonMaker = function (questionNumber) {
+    for ( i = 0; i < questionNumber; i++ ) {
+
+    }
+}
+
 var startQuiz = function () {
-    mainContainer.textContent = "";
+    
+    quizStart;
+    quizTimerStart;
 
 }
 
-startButton.addEventListener("click", startQuiz())
+var quizTimerStart = function () {
+    var currentCount = quizTimer;
+    for ( i = 1000; i <= currentCount; i ) {
+        if ( i <= currentCount ) {
+            currentCount - i;
+        } else {
+            gameEnd;
+        }
+    }
+}
+
+var gameEnd = function (highscore) {
+    getHighScores;
+    highScores.unshift(highscore);
+
+    saveHighScore(highscore);
+}
+
+var getHighScores = function () {
+    JSON.parse(localStorage.getItem("prevHighscores"));
+}
+
+var saveHighScore = function (highscore) {
+    gameEnd(highscore);
+    highScores.push(highscore);
+
+    localStorage.setItem("prevHighscores", JSON.stringify(highScores));
+}
+
+startButton.addEventListener("click", startQuiz)
+
+getHighScores();
