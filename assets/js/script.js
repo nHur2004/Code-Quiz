@@ -87,14 +87,21 @@ var startQuiz = function () {
 };
 
 var quizTimerStart = function () {
-    console.log("Clock")
-    var currentCount = quizTimer.textContent;
-    for ( i = 1000; i <= currentCount; i ) {
-            console.log(currentCount);
-            currentCount = currentCount - i;
-            setTimeout(console.log('tick'), 10000);
+    timeleft = 5;
+    var timecheck = setInterval(function () {
+        timeleft--
+        quizTimer.textContent = timeleft;
+        if (timeleft === 0) {
+            var highscore = timeleft;
+            gameEnd(highscore);
+            clearInterval(timecheck);
+        } 
+
+        if (timeleft < 0) {
+            quizTimer.innerText = 0;
+            clearInterval(timecheck)
         }
-    console.log("Clock ended")
+    }, 1000);
 };
 
 var gameEnd = function (highscore) {
