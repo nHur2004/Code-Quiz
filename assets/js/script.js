@@ -5,7 +5,7 @@ var startButton = document.getElementById("startButton");
 var mainContainer = document.getElementById("mainContainer");
 var quizTimer = document.getElementById("timerSpan");
 var buttonRow = document.getElementById("buttonRow");
-
+var quizButtonRow = document.getElementById("quizButtonRow");
 
 // questions array
 const questionsArray = [
@@ -62,18 +62,25 @@ const questionsArray = [
 ]
 
 var quizStart = function () {
-    buttonRow.textContent = "";
-console.log('Quiz started')
+    buttonRow.textContent = questionsArray.map;
 }
 
 var quizButtonMaker = function (questionNumber) {
     for ( i = 0; i < questionNumber; i++ ) {
-
+        var hello = createElement("button");
+        hello.textContent = `hello from ${i}`;
+        hello.setAttribute("class", "btn quizButton");
+        quizButtonRow.appendChild(hello);
     }
 }
 
 var startQuiz = function () {
     
+    var buttonWorks = document.createElement("span");
+    buttonWorks.textContent = "This button works as intended";
+    buttonWorks.setAttribute("thisWorks", "as intended");
+    mainContainer.appendChild(buttonWorks);
+
     quizStart;
     quizTimerStart;
 
@@ -85,7 +92,7 @@ var quizTimerStart = function () {
         if ( i <= currentCount ) {
             currentCount - i;
         } else {
-            gameEnd;
+            gameEnd(highscore);
         }
     }
 }
@@ -108,6 +115,6 @@ var saveHighScore = function (highscore) {
     localStorage.setItem("prevHighscores", JSON.stringify(highScores));
 }
 
-startButton.addEventListener("click", startQuiz)
+startButton.addEventListener("click", startQuiz())
 
 getHighScores();
